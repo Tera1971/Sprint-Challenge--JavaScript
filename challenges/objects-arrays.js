@@ -96,7 +96,7 @@ console.log(contactInfo);
 const uni = [];
 
 for (i = 0; i < graduates.length; i++) {
-  if (graduates[i].university.includes('Uni')){
+  if (graduates[i].university.match('Uni')){
   uni.push(graduates[i].university);}
 }
 console.log(uni);
@@ -147,10 +147,10 @@ console.log(lowerCase);
 The zoos are concerned about animals with a lower population count. Using filter, create a new array of objects called lowPopulationAnimals which contains only the animals with a population less than 5.
 
 */
-const largerPopulation = []; 
-largerPopulation.push(zooAnimals.filter((zooAnimal)=>zooAnimal.population < 5));
+const lowerPopulation = []; 
+lowerPopulation.push(zooAnimals.filter((zooAnimal)=>zooAnimal.population < 5));
 
-console.log(largerPopulation);
+console.log(lowerPopulation);
 
 /* Request 4: .reduce() 
 
@@ -158,7 +158,8 @@ The zoos need to know their total animal population across the United States. Fi
 
 */
 const populationTotal = [];
-populationTotal.push(zooAnimals.reduce(function (sum, current) {return sum + current.population},0));
+populationTotal.push(zooAnimals.reduce(function (sum, current) {
+  return sum + current.population},0));
 console.log(populationTotal);
 /*
 
